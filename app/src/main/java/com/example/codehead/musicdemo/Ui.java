@@ -67,17 +67,15 @@ public class Ui extends AppCompatActivity{
         Date d=new Date();
         SimpleDateFormat sdf= new SimpleDateFormat("HH");
         String currentDateTimeString = sdf.format(d);
-        String timezoneone = "19";
-        String timezonetwo = "7";
-        int resulttimezone2 = currentDateTimeString.compareTo(timezonetwo);
-        int resulttimezone1 = currentDateTimeString.compareTo(timezoneone);
 
-        if(resulttimezone1 == 0)
+        int time1 = Integer.parseInt(currentDateTimeString);
+
+        if(time1 < 7)
             dark();
-        else if(resulttimezone1 < 0 && resulttimezone2 > 0) {
+        else if(time1 > 7 && time1 < 19) {
             sun();
         }
-        else if(resulttimezone1 < 0 && resulttimezone2 < 0) {
+        else if(time1 > 19) {
             dark();
         }
         else
