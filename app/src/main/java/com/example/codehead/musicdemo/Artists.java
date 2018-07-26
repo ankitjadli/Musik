@@ -23,7 +23,8 @@ public class Artists extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.artistnamelist);
         listView=findViewById(R.id.artist_list);
-        artistview = (RelativeLayout) findViewById(R.id.uiback) ;
+        artistview = (RelativeLayout) findViewById(R.id.artistview) ;
+        testtime();
         artistList =new ArrayList<>();
         getSongList();
         Collections.sort(artistList, new Comparator<Song>(){
@@ -33,7 +34,7 @@ public class Artists extends AppCompatActivity {
         });
         ArtistsAdapter artistsAdapter=new ArtistsAdapter(this, artistList);
         listView.setAdapter(artistsAdapter);
-        testtime();
+
     }
     public void getSongList(){
         //query external audio
@@ -87,7 +88,6 @@ public class Artists extends AppCompatActivity {
     }
     private void dark()
     {
-
         artistview.setBackgroundResource(R.drawable.artistsblack);
     }
 
