@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import com.airbnb.lottie.LottieAnimationView;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -28,6 +28,7 @@ public class Ui extends AppCompatActivity{
     private String timer;
     private Date time;
     private TextView timetext;
+    LottieAnimationView lottieAnimationView;
 
 
     @Override
@@ -39,6 +40,9 @@ public class Ui extends AppCompatActivity{
         ui = (RelativeLayout) findViewById(R.id.uiback) ;
         mSongButton=findViewById(R.id.song_button);
         mArtistButton=findViewById(R.id.artist_button);
+
+        lottieAnimationView = (LottieAnimationView) findViewById(R.id.animation_view);
+        lottieAnimationView.playAnimation();
 
         testtime();
 
@@ -80,7 +84,6 @@ public class Ui extends AppCompatActivity{
         }
         else
             dark();
-
 
     }
 
